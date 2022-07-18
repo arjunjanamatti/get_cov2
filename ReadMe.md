@@ -11,4 +11,4 @@
 
         from get_cov2 import main
         # calculate the co-effecient of variance
-        cov = get_cov(series).cov()
+        cov = main.get_cov(series).cov()
