@@ -9,6 +9,6 @@
 
 2. Calculate the co-effecient of variance
 
-        from get_cov2 import main
+        from get_cov_2 import main
         # calculate the co-effecient of variance
         cov = main.get_cov(series).cov()
