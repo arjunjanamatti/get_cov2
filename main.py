@@ -1,16 +1,13 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import statistics
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+class get_cov:
+    def __init__(self, data_series):
+        self.series_1 = data_series
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    def cov(self):
+        std_dev = statistics.stdev(self.series_1)
+        std_dev = round(std_dev, 2)
+        data_mean = statistics.mean(self.series_1)
+        cov2 = std_dev / data_mean
+        return round(cov2,3)
