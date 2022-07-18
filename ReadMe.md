@@ -4,7 +4,7 @@
 
 1. Install:
 
-        pip install get_cov2
+        pip install get-cov2
 
 
 2. Calculate the co-effecient of variance
