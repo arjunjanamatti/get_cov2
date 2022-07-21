@@ -1,4 +1,4 @@
-import statistics
+import statistics, numpy as np
 
 
 class get_cov:
@@ -10,4 +10,4 @@ class get_cov:
         std_dev = round(std_dev, 2)
         data_mean = statistics.mean(self.series_1)
         cov2 = std_dev / data_mean
-        return round(cov2,3)
+        return round(cov2,3)**2
