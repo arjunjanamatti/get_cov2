@@ -1,5 +1,4 @@
-import statistics
-
+import numpy as np
 
 class gc:
     '''
@@ -11,14 +10,19 @@ class gc:
         '''
         :param data_series: list or pandas series
         '''
-        self.series_1 = data_series
+        self.series_1 = np.array(data_series)
 
     def cov(self):
-        if (len(self.series_1) > 1) & (statistics.mean(self.series_1) > 0):
-            std_dev = statistics.stdev(self.series_1)
-            std_dev = round(std_dev, 2)
-            data_mean = statistics.mean(self.series_1)
-            cov2 = std_dev / data_mean
-            return round((cov2)**2,3)
-        else:
+        try:
+            if (len(self.series_1) > 1) & (np.mean(self.series_1) > 0):
+                std_dev = np.std(self.series_1)
+                data_mean = np.mean(self.series_1)
+                cov2 = std_dev / data_mean
+                return round((cov2)**2,3)
+            else:
+                return "please pass a series instead of single number or mean of series needs to be greater than zero"
+
+        except:
             return "please pass a series instead of single number or mean of series needs to be greater than zero"
+
+
